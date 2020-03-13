@@ -65,7 +65,11 @@ session_start();
             <span class="help-message">Уже есть аккаунт? - <a href="">Войдите.</a></span>
         </form>
     </div>
-    <div class="fluid-container header-wrapper d-flex justify-content-end">
+    <div class="fluid-container header-wrapper d-flex justify-content-between">
+        <div class="row d-flex align-self-center ml-1 home-link">
+            <img src="img/home.svg" alt="Home Page" class="home-img">
+            <span>На главную</span>
+        </div>
         <div class="row d-flex align-self-center mr-0">
             <?php
             if (!isset($_SESSION['user'])) {
@@ -230,6 +234,10 @@ session_start();
         }, 600);
         return false
     })
+    $('.home-link').click(function () {
+        location.href='index.php'
+    })
+
 </script>
 
 <style>
@@ -371,6 +379,15 @@ session_start();
         margin-right: 5px;
         width: 25px;
         height: 25px;
+        cursor: pointer;
+    }
+    .home-img {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 25px;
+        height: 25px;
+    }
+    .home-link {
         cursor: pointer;
     }
 </style>
